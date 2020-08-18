@@ -1,0 +1,72 @@
+ <div class="row justify-content-center">
+   <div class="col-md-4 register-student">
+     <!-- form card register -->
+     <div class="card card-outline-secondary">
+       <div class="card-header">
+         <h3 class="mb-0">Editar estudiante</h3>
+       </div>
+       <div class="card-body">
+         <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+           <div class="form-group">
+             <label for="inputName">Nombre</label>
+             <input class="form-control" type="text" formControlName="name">
+             <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+               Nombre requerido.
+             </div>
+           </div>
+           <div class="form-group">
+            <label for="inputlastName">Apellido</label>
+            <input class="form-control" type="text" formControlName="lastName">
+            <div class="invalid-feedback" *ngIf="submitted && myForm.lastName.errors?.required">
+              Apellido requerido.
+            </div>
+          </div>
+           <div class="form-group">
+             <label for="inputEmail3">Email</label>
+             <input class="form-control" type="text" formControlName="email">
+             <!-- error -->
+             <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.required">
+               Email requerido.
+             </div>
+             <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.pattern">
+               Email invalido.
+             </div>
+           </div>
+
+           <div class="form-group">
+             <label for="inputVerify3">Telefono</label>
+             <input class="form-control" type="number" formControlName="phoneNumber">
+             <!-- error -->
+             <div class="invalid-feedback" *ngIf="submitted && myForm.phoneNumber.errors?.required">
+               Telefono requerido.
+             </div>
+             <div class="invalid-feedback" *ngIf="submitted && myForm.phoneNumber.errors?.pattern">
+               Ingrese solo numeros
+             </div>
+           </div>
+
+           <div class="form-group">
+            <label for="inputaddress">Direccion</label>
+            <input class="form-control" type="text" formControlName="address">
+            <!-- error -->
+            <div class="invalid-feedback" *ngIf="submitted && myForm.address.errors?.required">
+              Direccion requerida.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <img *ngIf="studentPhoto" src="{{studentPhoto}}" style="max-width:150px;"/>
+            <br/>
+            <label for="inputphoto"></label>
+            <input class="form-control" type="file" id="photoStudent" accept="image/png, image/jpeg" (change)="onFileChanged($event)">
+          </div>
+
+           <div class="form-group">
+             <button class="btn btn-success btn-lg btn-block" type="submit">Update</button>
+           </div>
+         </form>
+       </div>
+     </div><!-- form  -->
+   </div>
+ </div>
