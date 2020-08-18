@@ -7,7 +7,7 @@ Nodejs with mongodb and Angular CLI 7.2.3 app tool for students management
 - Start the MEAN Stack backend
   - `cd backend` to enter into the backend folder
   - Run `npm install` to install required dependencies.
-  - `nodemon server` to start the nodemon server
+  - `nodemon server` to start the nodemon server (if you don't have nodemon installed run 'npm install -g nodemon')
   - `mongod` to start the mongoDB shell
 
 ## Development server
